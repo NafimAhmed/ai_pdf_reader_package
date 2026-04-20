@@ -1,11 +1,11 @@
 name: ai_pdf_reader
-description: "A new Flutter project."
+description: Flutter package for PDF text extraction, audio reading, and live reading progress tracking.
 version: 0.0.1
-homepage:
+
 
 environment:
-  sdk: ^3.8.1
-  flutter: ">=1.17.0"
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.32.0"
 
 dependencies:
   file_picker: ^9.2.3
