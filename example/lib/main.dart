@@ -2,7 +2,7 @@
 
 
 
-import 'package:ai_pdf_reader/ai_pdf_reader_plus.dart';
+import 'package:ai_pdf_reader/ai_pdf_reader.dart';
 import 'package:flutter/material.dart';
 
 

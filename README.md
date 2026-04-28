@@ -26,6 +26,8 @@ This package is designed for developers who want to add a clean and interactive 
     - last read character index
 - 🧩 Reusable controller-based architecture
 - 📱 Easy integration inside any Flutter app
+- Generate offline extractive summaries from PDF text
+- Works without a backend for text extraction and local summary generation
 
 ---
 
@@ -56,7 +58,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  ai_pdf_reader: ^0.0.1
+  ai_pdf_reader: ^0.0.5
 
 ```
 
@@ -68,7 +70,7 @@ flutter pub get
 Import the package in your Dart file:
 
 ```dart
-import 'package:ai_pdf_reader/pdf_audio_reader_plus.dart';
+import 'package:ai_pdf_reader/pdf_audio_reader.dart';
 ```
 Create a controller:
 
@@ -97,7 +99,7 @@ Attach the package widget to your screen:
 ```dart
 
 import 'package:flutter/material.dart';
-import 'package:ai_pdf_reader/pdf_audio_reader_plus.dart';
+import 'package:ai_pdf_reader/pdf_audio_reader.dart';
 
 class DemoPage extends StatefulWidget {
   const DemoPage({super.key});
@@ -148,7 +150,7 @@ class _DemoPageState extends State<DemoPage> {
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:ai_pdf_reader/pdf_audio_reader_plus.dart';
+import 'package:ai_pdf_reader/pdf_audio_reader.dart';
 
 class DemoPage extends StatefulWidget {
   const DemoPage({super.key});
@@ -218,6 +220,18 @@ Check whether audio is currently playing
 
 ```dart
 final bool isSpeaking = controller.state.isSpeaking;
+```
+
+It can also generate offline PDF Summery
+
+```dart
+final String summary = LocalPdfSummarizer.summarize(
+  controller.state.extractedText,
+  maxSentences: 5,
+);
+
+print(summary);
+
 ```
 
 # Built-in Controls
